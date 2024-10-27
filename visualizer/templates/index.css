@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .card {
+        @apply text-center bg-primary p-5 rounded-lg text-background flex flex-col justify-center items-center;
+    }
+
+    .card-title {
+        @apply text-xs text-background font-bold text-center w-full;
+    }
+}

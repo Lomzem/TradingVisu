@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TradingVisu</title>
+    <link rel="stylesheet" href="{% static 'output.css' %}">
+
+    <script src="https://unpkg.com/htmx.org@2.0.3"
+        integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-background flex flex-col w-screen h-screen justify-center items-center gap-3 text-text">
+    <main class="bg-background flex flex-col w-screen h-screen justify-center items-center gap-3 text-text">
+    <div class="text-center">
+        <h1 class="text-xl">Welcome to TradingVisu!</h1>
+        <p class="text-sm">First, start by uploading a CSV file!</p>
+    </div>
+            <form 
+            id="csv-upload-form"
+            hx-encoding="multipart/form-data"
+            hx-post="{% url 'upload_csv' %}"
+            hx-trigger="change"
+            hx-target="body"
+            method="POST">
+
+        {% csrf_token %}
+
+        <label for="csv-upload" class="bg-primary px-2 py-1 rounded-lg text-background hover:cursor-pointer">Choose File </label>
+
+        <input
+            accept=".csv"
+            class="hidden"
+            id="csv-upload"
+            name="csv_file"
+            type="file"
+        >
+    </form>
+    </main>
+</body>
+
+</html>

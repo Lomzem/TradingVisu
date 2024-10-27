@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TradingVisu</title>
+    <link rel="stylesheet" href="{% static 'output.css' %}">
+
+    <!-- <script src="https://unpkg.com/htmx.org@2.0.3" -->
+    <!--     integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" -->
+    <!--     crossorigin="anonymous"></script> -->
+
+</head>
+
+<body class="bg-background flex flex-col w-screen h-screen justify-center items-center text-text gap-3">
+        <h1 class="text-xl">Here's your stats.</h1>
+        <main class="grid grid-cols-3 grid-rows-3 px-5 py-2 gap-5 w-3/5">
+            <div class="card">
+                <div class="card-title">Biggest % Win</div>
+                <div>
+                    {{ max_gainp }}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Biggest % Loss</div>
+                <div>
+                    {{ max_lossp }}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Win Rate</div>
+                <div>
+                    {{ winrate }}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Biggest $ Win</div>
+                <div>
+                    {{ max_gaind }}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Biggest $ Loss</div>
+                <div>
+                    {{ max_lossd }}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Net $ Gain</div>
+                <div>
+                    {{ net_dgain }}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Best Weekday</div>
+                <div>
+                    {{ best_weekday }}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Worst Weekday</div>
+                <div>
+                    {{ worst_weekday }} 
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Profit Factor</div>
+                <div>
+                    {{ profit_factor }}
+                </div>
+            </div>
+        </main>
+</body>
+
+</html>
+
