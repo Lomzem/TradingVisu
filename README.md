@@ -52,6 +52,26 @@ python manage.py runserver
 
 ## Obtaining a CSV file
 
+### TradeZero
+1. In your TradeZero portal, click **Account Overview**.
+2. Click the **Trades** tab under **My Account - Daily Info**.
+3. Choose your desired date range.
+4. Click on the **Excel Icon** to export your trading data as a CSV file.
+
+### Other Sources
+While this app is designed primarily for handling CSV exports from the web portal for TradeZero, it is possible to use other sources for trading data if the CSV has the appropriate columns.
+
+To help get you started, you can download an example CSV file [here](https://github.com/Lomzem/TradingVisu/example.csv)
+
+In general, the CSV files must have these columns:
+- `T/D`: The date of the transaction.
+- `Side`: One of four options: `B`, `S`, `SS`, or `BC` for Buy, Sell, Short Sell, and Buy Cover respectively.
+- `Symbol`: The stock ticker of the transaction.
+- `Qty`: The number of shares in the transaction.
+- `Price`: The stock price of the transaction.
+- `Exec Time`: The time of the transaction.
+
+
 ## Technologies Used
 - **Django**: Backend framework for building the web application.
 - **Pandas**: Library for data manipulation and analysis.
