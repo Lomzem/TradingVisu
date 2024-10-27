@@ -61,7 +61,7 @@ python manage.py runserver
 ### Other Sources
 While this app is designed primarily for handling CSV exports from the web portal for TradeZero, it is possible to use other sources for trading data if the CSV has the appropriate columns.
 
-To help get you started, you can download an example CSV file [here](https://github.com/Lomzem/TradingVisu/example.csv)
+To help get you started, you can download an example CSV file [here](https://github.com/Lomzem/TradingVisu/raw/main/example.csv)
 
 In general, the CSV files must have these columns:
 - `T/D`: The date of the transaction.
